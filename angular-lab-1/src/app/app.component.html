@@ -1,3 +1,21 @@
 <h1>
   Welcome to {{title}}
 </h1>
+Enter name of the application: <input type="text" [(ngModel)]="title" />
+<p>My Application is {{ title }}</p>
+<p>Number of Messages is {{messages.length}}</p>
+
+<div>
+  <button [disabled]="disablesNewMessage" (click)="onSendMessage()">Send Message</button>
+</div>
+
+<p>First Message is from {{messages[0].sender}}: {{messages[0].message}}</p>
+<div>
+  <ul>
+    <li *ngFor="let currentMessage of messages">
+      {{currentMessage.sender}}: {{currentMessage.message}}
+    </li>
+  </ul>
+</div>
+<p>Messages: {{messages[0].sender}}: {{messages[1].sender}}</p>
+
